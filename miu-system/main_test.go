@@ -115,7 +115,7 @@ func TestRuleIV(t *testing.T) {
 	}
 }
 
-func TestSolve(t *testing.T) {
+func TestSolve1(t *testing.T) {
 	start := "MI"
 	end := "MIU"
 	expect := StepString{
@@ -134,3 +134,24 @@ func TestSolve(t *testing.T) {
 		}
 	}
 }
+
+// Already takes much too long / too much memory
+//func TestSolve2(t *testing.T) {
+//	start := "MI"
+//	end := "MUII"
+//	expect := StepString{
+//		"MUII",
+//		[]StepDesc{StepStart, StepRuleI},
+//	}
+//	res := Solve(start, end, 1000)
+//
+//	if res.Result != expect.Result {
+//		t.Errorf("want: %s, got invalid result: `%s'", expect.Result, res.Result)
+//	}
+//	for i, step := range expect.Steps {
+//		actualStep := res.Steps[i]
+//		if actualStep != step {
+//			t.Errorf("want: %s, got invalid step: `%s'", step, actualStep)
+//		}
+//	}
+//}
